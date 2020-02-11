@@ -2,6 +2,8 @@ import 'quest.dart';
 
 class Quiz{
   int questionNumber=0;
+  int total =0;
+
   // making it private by _ underscore before variable.....
   //to encapsulate
   List<quest> _questions =[
@@ -47,7 +49,7 @@ bool getAns(){
   return _questions[questionNumber].ans;
 }
 
-
+// is  questions finished or not ...
 bool isFinish(){
     if(questionNumber == _questions.length-1){
       return true;
@@ -60,6 +62,13 @@ bool isFinish(){
 void reset(){
     questionNumber =  0;
 }
+
+void result(){
+    if(getAns() == true){
+           total++;
+    }
+}
+
 
 
 }
